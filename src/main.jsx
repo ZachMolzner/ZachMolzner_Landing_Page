@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './styles.css';
 
 const resumeHref = `${import.meta.env.BASE_URL}Zachery%20Molzner%20Resume.docx`;
+const profileImageSrc = `${import.meta.env.BASE_URL}IMG_0565(1).jpg`;
 
 const contactLinks = {
   // Update these values when you want to change your public contact links.
@@ -120,6 +121,15 @@ function App() {
 
       <main>
         <section id="hero" className="hero section-shell">
+          <div className="hero-profile">
+            <div className="profile-frame">
+              <img
+                className="profile-image"
+                src={profileImageSrc}
+                alt="Portrait of Zach Molzner"
+              />
+            </div>
+          </div>
           <div className="hero-content">
             <p className="eyebrow">Builder + educator + systems thinker</p>
             <h1>Zach Molzner</h1>
