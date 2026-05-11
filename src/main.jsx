@@ -2,6 +2,8 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
+const resumeHref = `${import.meta.env.BASE_URL}Zachery%20Molzner%20Resume.docx`;
+
 const contactLinks = {
   // Update these values when you want to change your public contact links.
   email: 'Zamolzner@gmail.com',
@@ -109,7 +111,7 @@ function App() {
             <a href="#bring">What I Bring</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href="#resume">Resume</a>
+            <a href={resumeHref} download>Resume</a>
             <a href="#contact">Contact</a>
           </div>
         </nav>
@@ -137,8 +139,8 @@ function App() {
               ))}
             </div>
             <div className="button-row" aria-label="Portfolio actions">
-              <a className="button primary" href="#resume">
-                View Resume
+              <a className="button primary" href={resumeHref} download>
+                Download Resume
               </a>
               <a className="button secondary" href="#projects">
                 View Projects
@@ -252,9 +254,9 @@ function App() {
                 This resume snapshot highlights the transferable strengths, technical training,
                 and project work that support both career paths.
               </p>
-              {/* TODO: Place your final resume PDF in the public folder and name it resume.pdf. */}
-              <a className="button primary" href="/resume.pdf" download>
-                Download Resume PDF
+              {/* Resume file is served from Vite's public assets folder. */}
+              <a className="button primary" href={resumeHref} download>
+                Download Resume
               </a>
             </div>
             <div className="resume-list" aria-label="Resume highlights">
