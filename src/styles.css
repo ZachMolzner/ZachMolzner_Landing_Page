@@ -600,6 +600,32 @@ h4 {
   gap: 0.75rem;
 }
 
+.project-meta-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: space-between;
+}
+
+.project-status-badge {
+  background:
+    linear-gradient(135deg, rgba(72, 255, 155, 0.18), rgba(53, 217, 255, 0.16)),
+    rgba(3, 16, 28, 0.78);
+  border: 1px solid rgba(72, 255, 155, 0.46);
+  border-radius: 999px;
+  box-shadow:
+    0 0 18px rgba(72, 255, 155, 0.16),
+    inset 0 0 12px rgba(53, 217, 255, 0.08);
+  color: #d7ffe9;
+  display: inline-flex;
+  font-size: 0.74rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.62rem;
+  text-transform: uppercase;
+}
+
 .project-card h3 {
   font-size: clamp(1.45rem, 3vw, 2rem);
   margin-bottom: 0;

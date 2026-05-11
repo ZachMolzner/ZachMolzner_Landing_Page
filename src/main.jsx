@@ -66,8 +66,9 @@ const projects = [
   {
     title: 'SarahNode AI Assistant',
     type: 'AI systems case study',
+    status: 'Active Development',
     overview:
-      'A local-first AI companion project combining React, FastAPI, WebSockets, voice systems, avatar interactions, and event-driven architecture into a responsive assistant experience.',
+      'SarahNode is an ongoing personal AI assistant project currently in active development. It combines conversational AI, voice systems, avatar interactions, and event-driven architecture into an immersive local-first companion experience.',
     badges: ['AI', 'React', 'Systems'],
     keyFeatures: [
       'Local-first assistant workflow',
@@ -337,7 +338,10 @@ function App() {
                 style={{ '--project-delay': `${index * 110}ms` }}
               >
                 <div className="project-card-header">
-                  <span className="panel-label">Project {String(index + 1).padStart(2, '0')}</span>
+                  <div className="project-meta-row">
+                    <span className="panel-label">Project {String(index + 1).padStart(2, '0')}</span>
+                    {project.status && <span className="project-status-badge">{project.status}</span>}
+                  </div>
                   <p className="project-type">{project.type}</p>
                   <h3>{project.title}</h3>
                   <p className="project-overview">{project.overview}</p>
