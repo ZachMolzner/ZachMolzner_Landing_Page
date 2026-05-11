@@ -446,6 +446,35 @@ h3 {
   text-shadow: 0 0 18px rgba(33, 197, 199, 0.5);
 }
 
+.contact-link {
+  border-radius: 0.65rem;
+  cursor: pointer;
+  display: inline-flex;
+  width: fit-content;
+}
+
+.email-link {
+  padding: 0.1rem 0.2rem;
+  transition:
+    color 180ms ease,
+    text-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.email-link:hover,
+.email-link:focus-visible {
+  color: white;
+  text-shadow:
+    0 0 14px rgba(33, 197, 199, 0.72),
+    0 0 28px rgba(124, 92, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.email-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .resume-card {
   display: grid;
   gap: 2rem;

@@ -7,6 +7,7 @@ const resumeHref = `${import.meta.env.BASE_URL}Zachery%20Molzner%20Resume.docx`;
 const contactLinks = {
   // Update these values when you want to change your public contact links.
   email: 'Zamolzner@gmail.com',
+  emailHref: 'mailto:Zamolzner@gmail.com',
   github: 'https://github.com/ZachMolzner',
   linkedin: 'https://www.linkedin.com/in/zmolzner',
 };
@@ -336,7 +337,13 @@ function App() {
           <address className="card contact-card command-panel">
             <span className="panel-label">Open Channel</span>
             {/* TODO: Update contactLinks above when you want to change public contact details. */}
-            <a href={`mailto:${contactLinks.email}`}>Email: {contactLinks.email}</a>
+            <a
+              className="contact-link email-link"
+              href={contactLinks.emailHref}
+              aria-label={`Email Zach Molzner at ${contactLinks.email}`}
+            >
+              Email: {contactLinks.email}
+            </a>
             <a href={contactLinks.github}>GitHub: {contactLinks.github}</a>
             <a href={contactLinks.linkedin}>LinkedIn: {contactLinks.linkedin}</a>
           </address>

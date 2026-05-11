@@ -145,7 +145,7 @@ function renderPortfolio() {
       </section>
       <section id="contact" class="section-shell contact-section">
         <div><p class="section-kicker">Contact</p><h2>Let’s build something useful.</h2><p>I am open to software engineering, front-end development, curriculum design, instructional design, and EdTech opportunities.</p></div>
-        <address class="card contact-card"><a href="mailto:Zamolzner@gmail.com">Email: Zamolzner@gmail.com</a><a href="https://github.com/ZachMolzner">GitHub: https://github.com/ZachMolzner</a><a href="https://www.linkedin.com/in/zmolzner">LinkedIn: https://www.linkedin.com/in/zmolzner</a></address>
+        <address class="card contact-card"><a class="contact-link email-link" href="mailto:Zamolzner@gmail.com" aria-label="Email Zach Molzner at Zamolzner@gmail.com">Email: Zamolzner@gmail.com</a><a href="https://github.com/ZachMolzner">GitHub: https://github.com/ZachMolzner</a><a href="https://www.linkedin.com/in/zmolzner">LinkedIn: https://www.linkedin.com/in/zmolzner</a></address>
       </section>
     </main>`;
 }
