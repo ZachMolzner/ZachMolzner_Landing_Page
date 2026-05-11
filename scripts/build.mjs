@@ -6,6 +6,7 @@ import path from 'node:path';
 const root = process.cwd();
 const dist = path.join(root, 'dist');
 const viteBin = path.join(root, 'node_modules', '.bin', process.platform === 'win32' ? 'vite.cmd' : 'vite');
+const resumeHref = './Zachery%20Molzner%20Resume.docx';
 
 if (existsSync(viteBin)) {
   await runViteBuild(viteBin);
@@ -75,7 +76,7 @@ function renderPortfolio() {
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
-          <a href="#resume">Resume</a>
+          <a href="${resumeHref}" download>Resume</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -88,7 +89,7 @@ function renderPortfolio() {
           <h2>Software Engineer | Educator | Instructional Designer</h2>
           <p class="hero-pitch">Former educator turned software engineer who builds user-friendly web apps, learning tools, and technology-driven instructional experiences.</p>
           <div class="button-row" aria-label="Portfolio actions">
-            <a class="button primary" href="#resume">View Resume</a>
+            <a class="button primary" href="${resumeHref}" download>Download Resume</a>
             <a class="button secondary" href="#projects">View Projects</a>
             <a class="button ghost" href="#contact">Contact Me</a>
           </div>
@@ -124,7 +125,7 @@ function renderPortfolio() {
             <p class="section-kicker">Resume Preview</p>
             <h2>Ready for engineering and instructional design opportunities</h2>
             <p>This resume snapshot highlights the transferable strengths, technical training, and project work that support both career paths.</p>
-            <a class="button primary" href="/resume.pdf" download>Download Resume PDF</a>
+            <a class="button primary" href="${resumeHref}" download>Download Resume</a>
           </div>
           <div class="resume-list" aria-label="Resume highlights">
             ${resumeItem('Professional Summary', 'Software engineer and former educator focused on user-friendly web apps, instructional tools, and clear technical communication.')}
@@ -144,7 +145,7 @@ function renderPortfolio() {
       </section>
       <section id="contact" class="section-shell contact-section">
         <div><p class="section-kicker">Contact</p><h2>Let’s build something useful.</h2><p>I am open to software engineering, front-end development, curriculum design, instructional design, and EdTech opportunities.</p></div>
-        <address class="card contact-card"><a href="mailto:your.email@example.com">your.email@example.com</a><a href="https://github.com/ZachMolzner">github.com/ZachMolzner</a><a href="https://www.linkedin.com/in/zmolzner">linkedin.com/in/zmolzner</a></address>
+        <address class="card contact-card"><a href="mailto:Zamolzner@gmail.com">Email: Zamolzner@gmail.com</a><a href="https://github.com/ZachMolzner">GitHub: https://github.com/ZachMolzner</a><a href="https://www.linkedin.com/in/zmolzner">LinkedIn: https://www.linkedin.com/in/zmolzner</a></address>
       </section>
     </main>`;
 }
