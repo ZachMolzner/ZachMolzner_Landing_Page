@@ -1598,3 +1598,170 @@ img {
     transform: none;
   }
 }
+
+/* Final portfolio sections + performance-minded layout helpers */
+main > .section-shell:not(.hero):not(.snapshot-section) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 620px;
+}
+
+.snapshot-section {
+  padding-top: 2rem;
+}
+
+.compact-heading {
+  margin-bottom: 1rem;
+}
+
+.compact-heading h2 {
+  font-size: clamp(1.65rem, 5vw, 2.55rem);
+}
+
+.snapshot-grid,
+.learning-grid,
+.process-grid {
+  display: grid;
+  gap: 0.85rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.snapshot-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.snapshot-chip,
+.learning-chip,
+.process-step {
+  border-radius: 1rem;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.snapshot-chip {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.snapshot-chip span,
+.process-step span {
+  color: var(--accent-green);
+  flex: 0 0 auto;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+}
+
+.snapshot-chip strong,
+.learning-chip {
+  color: #effbff;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.learning-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+}
+
+.learning-chip {
+  align-items: center;
+  display: flex;
+  min-height: 4rem;
+}
+
+.process-grid {
+  counter-reset: build-step;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+.process-step {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.process-step p {
+  color: #dff7ff;
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+.final-cta {
+  align-items: stretch;
+}
+
+.final-cta .contact-card {
+  align-content: center;
+}
+
+.contact-actions {
+  margin-top: 0;
+}
+
+.contact-actions .button {
+  width: 100%;
+}
+
+.contact-detail {
+  border-radius: 0.65rem;
+  display: inline-flex;
+  margin-top: 0.3rem;
+  min-height: 44px;
+  place-items: center;
+  width: fit-content;
+}
+
+.project-card::before {
+  animation: none;
+}
+
+@media (min-width: 640px) {
+  .snapshot-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .snapshot-section {
+    padding-top: 3rem;
+  }
+
+  .snapshot-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .snapshot-chip {
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 8.5rem;
+  }
+
+  .contact-actions .button {
+    width: auto;
+  }
+}
+
+@media (max-width: 639px) {
+  .snapshot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .snapshot-section {
+    padding-top: 2.5rem;
+  }
+
+  .snapshot-chip,
+  .learning-chip,
+  .process-step {
+    border-radius: 1rem;
+    padding: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > .section-shell:not(.hero):not(.snapshot-section) {
+    content-visibility: visible;
+    contain-intrinsic-size: none;
+  }
+}
