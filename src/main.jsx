@@ -64,31 +64,135 @@ const bringItems = [
 
 const projects = [
   {
-    title: 'Ivalice Chronicles / Final Fantasy Tactics Party Optimizer',
-    description:
-      'A tactical RPG party optimizer built with React that analyzes job roles, party coverage, and character abilities to help users build stronger team compositions.',
-    tags: ['React', 'Tactical Systems', 'Optimization'],
-    // TODO: Replace this placeholder with the real repository URL.
-    github: '#',
-    // TODO: Replace this placeholder with the real live demo URL.
-    demo: '#',
-  },
-  {
     title: 'SarahNode AI Assistant',
-    description:
-      'A local-first AI companion project combining React, FastAPI, WebSockets, voice systems, avatar interactions, and event-driven architecture.',
-    tags: ['React', 'FastAPI', 'WebSockets'],
-    // TODO: Replace this placeholder with the real repository URL.
-    github: '#',
+    type: 'AI systems case study',
+    overview:
+      'A local-first AI companion project combining React, FastAPI, WebSockets, voice systems, avatar interactions, and event-driven architecture into a responsive assistant experience.',
+    badges: ['AI', 'React', 'Systems'],
+    keyFeatures: [
+      'Local-first assistant workflow',
+      'Real-time WebSocket communication',
+      'Voice and avatar interaction patterns',
+      'Event-driven application architecture',
+      'Responsive companion-style interface',
+    ],
+    stack: ['React', 'FastAPI', 'WebSockets', 'Python', 'JavaScript', 'CSS'],
+    focusAreas: [
+      'Real-time systems',
+      'AI interaction design',
+      'Frontend state orchestration',
+      'Assistant experience architecture',
+    ],
+    learned:
+      'This project deepened my experience designing AI-adjacent interfaces, coordinating real-time client-server events, and structuring assistant workflows around clear user feedback loops.',
   },
   {
-    title: 'Curriculum / Learning Design Portfolio',
-    description:
-      'A portfolio of lesson plans, rubrics, assessments, guided projects, student-facing materials, and professional learning resources designed for real classrooms.',
-    tags: ['Curriculum', 'Assessment', 'EdTech'],
-    // TODO: Replace this placeholder with the real portfolio link when available.
-    linkText: 'Coming Soon',
-    link: '#',
+    title: 'Final Fantasy Tactics Party Optimizer',
+    type: 'Optimization case study',
+    overview:
+      'A tactical RPG party optimizer built with React that analyzes job roles, party coverage, and character abilities to help users reason through stronger team compositions.',
+    badges: ['React', 'Frontend', 'Systems'],
+    keyFeatures: [
+      'Party composition analysis',
+      'Role and coverage evaluation',
+      'Character ability comparison',
+      'Decision-support interface',
+      'Game-system inspired data modeling',
+    ],
+    stack: ['React', 'JavaScript', 'CSS', 'State Management'],
+    focusAreas: [
+      'Optimization logic',
+      'Data-driven UI design',
+      'Reusable component structure',
+      'Systems thinking',
+    ],
+    learned:
+      'This project strengthened my ability to translate complex rule systems into approachable interfaces and build tools that help users compare options, identify gaps, and make informed decisions.',
+  },
+  {
+    title: 'WTWR (What To Wear Right Now)',
+    type: 'Full-stack case study',
+    overview:
+      'A full-stack weather-based clothing recommendation application that provides users with suggested clothing options based on real-time weather conditions and personalized user data.',
+    badges: ['Full-Stack', 'React', 'MERN'],
+    keyFeatures: [
+      'Real-time weather integration',
+      'User authentication',
+      'Clothing item management',
+      'Responsive dashboard UI',
+      'CRUD functionality',
+      'Protected routes',
+      'Persistent user data',
+    ],
+    stack: [
+      'React',
+      'JavaScript',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'REST APIs',
+      'JWT Authentication',
+      'CSS',
+    ],
+    focusAreas: [
+      'Full-stack architecture',
+      'API integration',
+      'Authentication systems',
+      'State management',
+      'Responsive UI development',
+    ],
+    learned:
+      'This project strengthened my understanding of full-stack workflows, authentication handling, API communication, and connecting front-end interfaces to persistent backend data systems.',
+  },
+  {
+    title: 'Spots',
+    type: 'Full-stack case study',
+    overview:
+      'A full-stack social photo-sharing web application that allows users to upload images, edit profiles, interact with content, and manage dynamic user data through a responsive interface.',
+    badges: ['Full-Stack', 'React', 'MERN'],
+    keyFeatures: [
+      'Photo uploads',
+      'Profile editing',
+      'Dynamic card rendering',
+      'Likes and interactions',
+      'Responsive design',
+      'API-driven updates',
+      'Form validation',
+    ],
+    stack: ['React', 'JavaScript', 'Node.js', 'Express', 'MongoDB', 'REST APIs', 'CSS', 'Webpack/Vite'],
+    focusAreas: [
+      'Component architecture',
+      'Dynamic rendering',
+      'Form validation',
+      'CRUD operations',
+      'User experience design',
+    ],
+    learned:
+      'This project improved my understanding of scalable UI structure, reusable components, API-based rendering, and responsive frontend development.',
+  },
+  {
+    title: 'Simple To-Do App',
+    type: 'Frontend architecture case study',
+    overview:
+      'A modular task management application built with object-oriented JavaScript principles focused on clean architecture, dynamic interaction, and persistent task tracking.',
+    badges: ['Frontend', 'JavaScript', 'EdTech'],
+    keyFeatures: [
+      'Task creation/editing',
+      'Dynamic DOM updates',
+      'Modular OOP structure',
+      'Form validation',
+      'Local storage persistence',
+      'Event-driven interactions',
+    ],
+    stack: ['JavaScript', 'HTML', 'CSS', 'Local Storage', 'OOP Architecture'],
+    focusAreas: [
+      'Object-oriented programming',
+      'Modular code organization',
+      'Event handling',
+      'Front-end fundamentals',
+    ],
+    learned:
+      'This project helped reinforce core JavaScript fundamentals, modular architecture patterns, and building maintainable frontend applications.',
   },
 ];
 
@@ -227,29 +331,41 @@ function App() {
           </div>
           <div className="project-grid">
             {projects.map((project, index) => (
-              <article className="card project-card command-panel" key={project.title}>
-                <div>
+              <article
+                className="card project-card command-panel"
+                key={project.title}
+                style={{ '--project-delay': `${index * 110}ms` }}
+              >
+                <div className="project-card-header">
                   <span className="panel-label">Project {String(index + 1).padStart(2, '0')}</span>
+                  <p className="project-type">{project.type}</p>
                   <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+                  <p className="project-overview">{project.overview}</p>
                 </div>
-                <div className="tag-row" aria-label={`${project.title} technologies`}>
-                  {project.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
+
+                <div className="project-badge-row" aria-label={`${project.title} project type badges`}>
+                  {project.badges.map((badge) => (
+                    <span key={badge}>{badge}</span>
                   ))}
                 </div>
-                <div className="project-links">
-                  {project.github && (
-                    <a href={project.github} aria-label={`${project.title} GitHub repository`}>
-                      GitHub
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a href={project.demo} aria-label={`${project.title} live demo`}>
-                      Live Demo
-                    </a>
-                  )}
-                  {project.link && <a href={project.link}>{project.linkText}</a>}
+
+                <div className="project-detail-grid">
+                  <ProjectList title="Key Features" items={project.keyFeatures} />
+                  <ProjectList title="Focus Areas" items={project.focusAreas} />
+                </div>
+
+                <div className="project-stack">
+                  <h4>Technical Stack</h4>
+                  <div className="tag-row" aria-label={`${project.title} technologies`}>
+                    {project.stack.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="project-learned">
+                  <h4>What I Learned</h4>
+                  <p>{project.learned}</p>
                 </div>
               </article>
             ))}
@@ -360,6 +476,20 @@ function App() {
         </section>
       </main>
     </>
+  );
+}
+
+
+function ProjectList({ title, items }) {
+  return (
+    <div className="project-list-block">
+      <h4>{title}</h4>
+      <ul className="project-list">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
