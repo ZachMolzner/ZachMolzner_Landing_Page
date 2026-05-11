@@ -4,6 +4,8 @@ import "./styles.css";
 
 const resumeHref = `${import.meta.env.BASE_URL}Zachery%20Molzner%20Resume.docx`;
 const profileImageSrc = `${import.meta.env.BASE_URL}IMG_0565(1).jpg`;
+const profileImageWidth = 2323;
+const profileImageHeight = 3193;
 
 const contactLinks = {
   // Update these values when you want to change your public contact links.
@@ -284,6 +286,35 @@ const projects = [
   },
 ];
 
+
+const quickSnapshot = [
+  "13+ Years Leadership Experience",
+  "MERN Stack Developer",
+  "Former Instructional Leader",
+  "React & Full-Stack Focus",
+  "Based in Arizona • Open to Remote",
+  "Building AI + EdTech Systems",
+];
+
+const currentlyLearning = [
+  "TypeScript",
+  "Advanced React patterns",
+  "Backend scalability",
+  "AI-assisted systems",
+  "WebSocket architecture",
+  "UI/UX accessibility",
+  "Performance optimization",
+];
+
+const buildProcess = [
+  "Understand the user and the problem",
+  "Break the system into clear parts",
+  "Build structure before polish",
+  "Focus on usability and accessibility",
+  "Test, refine, and improve",
+  "Keep learning and iterating",
+];
+
 const currentFocus = [
   "I am intentionally moving fully into software engineering while continuing to build on the strengths that made me effective in education: patience, structure, clear communication, and a habit of helping people move from confusion to confidence.",
   "Each project is a chance to get sharper with modern engineering practices: React architecture, API design, authentication, state management, testing assumptions, and writing code that another developer could understand and extend.",
@@ -322,6 +353,10 @@ function App() {
                 className="profile-image"
                 src={profileImageSrc}
                 alt="Portrait of Zach Molzner"
+                width={profileImageWidth}
+                height={profileImageHeight}
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
           </div>
@@ -389,6 +424,25 @@ function App() {
         </section>
 
         <section
+          id="snapshot"
+          className="section-shell snapshot-section tech-divider"
+          aria-labelledby="snapshot-heading"
+        >
+          <div className="section-heading compact-heading">
+            <p className="section-kicker">Quick Snapshot</p>
+            <h2 id="snapshot-heading">Fast signal for where I add value</h2>
+          </div>
+          <div className="snapshot-grid" aria-label="Portfolio quick snapshot">
+            {quickSnapshot.map((item, index) => (
+              <article className="snapshot-chip command-panel" key={item}>
+                <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <strong>{item}</strong>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section
           id="about"
           className="section-shell split-section tech-divider"
         >
@@ -411,6 +465,29 @@ function App() {
               in mind. Whether I am developing a React application or designing
               learning materials, my goal is to create tools that are clear,
               reliable, and genuinely helpful.
+            </p>
+          </div>
+        </section>
+
+        <section id="background" className="section-shell split-section tech-divider">
+          <div>
+            <p className="section-kicker">Why My Background Matters</p>
+            <h2>I build with people in mind, not just code.</h2>
+          </div>
+          <div className="card large-card command-panel">
+            <p>
+              I have spent 13+ years explaining complex ideas clearly, guiding
+              people through frustration, and helping learners move from
+              uncertainty to confidence. That experience makes me stronger as a
+              developer because software is never only about syntax; it is about
+              how real people think, struggle, learn, and adapt.
+            </p>
+            <p>
+              I have been trusted to lead, train, organize, and solve problems
+              under pressure. I bring that same communication, patience,
+              structure, and leadership into technical work: clarifying needs,
+              breaking systems into understandable parts, documenting decisions,
+              and building tools that feel useful for the people using them.
             </p>
           </div>
         </section>
@@ -443,7 +520,7 @@ function App() {
             <p>
               My background combines software engineering skills with the
               leadership, communication, instructional design, and
-              systems-building experience developed over 10+ years in education.
+              systems-building experience developed over 13+ years in education.
               I am growing as an engineer while bringing a proven ability to
               teach, organize, document, and help people succeed.
             </p>
@@ -527,6 +604,43 @@ function App() {
           </div>
         </section>
 
+        <section id="currently-learning" className="section-shell tech-divider">
+          <div className="section-heading">
+            <p className="section-kicker">Currently Learning</p>
+            <h2>Active growth around modern product engineering</h2>
+            <p>
+              I am building momentum in the areas that help practical software
+              become more scalable, accessible, maintainable, and useful.
+            </p>
+          </div>
+          <ul className="learning-grid" aria-label="Currently learning topics">
+            {currentlyLearning.map((item) => (
+              <li className="learning-chip command-panel" key={item}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="approach" className="section-shell tech-divider">
+          <div className="section-heading">
+            <p className="section-kicker">How I Approach Building</p>
+            <h2>Systems thinking, clear steps, practical iteration</h2>
+            <p>
+              My workflow starts with people and structure, then moves toward
+              clean execution, accessibility, testing, and steady improvement.
+            </p>
+          </div>
+          <ol className="process-grid">
+            {buildProcess.map((step, index) => (
+              <li className="process-step command-panel" key={step}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{step}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
         <section id="current-focus" className="section-shell tech-divider">
           <div className="section-heading">
             <p className="section-kicker">Current Focus</p>
@@ -543,6 +657,23 @@ function App() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section id="outside-code" className="section-shell split-section tech-divider">
+          <div>
+            <p className="section-kicker">Outside of Code</p>
+            <h2>The same curiosity shows up everywhere.</h2>
+          </div>
+          <div className="card large-card command-panel">
+            <p>
+              Outside of programming, I am drawn to tactical game systems, AI
+              interfaces, immersive technology, teaching, instructional design,
+              sci-fi and cyberpunk aesthetics, optimization, and problem solving.
+              Those interests keep me thinking about how systems work, how
+              people interact with them, and how small design choices can make
+              complex experiences easier to navigate.
+            </p>
           </div>
         </section>
 
@@ -576,29 +707,38 @@ function App() {
 
         <section
           id="contact"
-          className="section-shell contact-section tech-divider"
+          className="section-shell contact-section final-cta tech-divider"
         >
           <div>
             <p className="section-kicker">Contact</p>
-            <h2>Let’s build something useful.</h2>
+            <h2>Let’s Build Something Useful</h2>
             <p>
-              I am open to software engineering, front-end development,
-              curriculum design, instructional design, and EdTech opportunities.
+              I’m open to frontend, full-stack, junior software engineering,
+              EdTech, and instructional design opportunities. I’m looking for a
+              team where I can grow, contribute, and build practical tools that
+              help people.
             </p>
           </div>
           <address className="card contact-card command-panel">
             <span className="panel-label">Open Channel</span>
             {/* TODO: Update contactLinks above when you want to change public contact details. */}
-            <a
-              className="contact-link email-link"
-              href={contactLinks.emailHref}
-              aria-label={`Email Zach Molzner at ${contactLinks.email}`}
-            >
-              Email: {contactLinks.email}
-            </a>
-            <a href={contactLinks.github}>GitHub: {contactLinks.github}</a>
-            <a href={contactLinks.linkedin}>
-              LinkedIn: {contactLinks.linkedin}
+            <div className="button-row contact-actions" aria-label="Contact actions">
+              <a
+                className="button primary contact-link email-link"
+                href={contactLinks.emailHref}
+                aria-label={`Email Zach Molzner at ${contactLinks.email}`}
+              >
+                Email Me
+              </a>
+              <a className="button secondary" href={resumeHref} download>
+                Download Resume
+              </a>
+              <a className="button ghost" href={contactLinks.linkedin}>
+                LinkedIn
+              </a>
+            </div>
+            <a className="contact-detail" href={contactLinks.emailHref}>
+              {contactLinks.email}
             </a>
           </address>
         </section>

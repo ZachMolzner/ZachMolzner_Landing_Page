@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ZM favicon">
+  <defs>
+    <linearGradient id="g" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#35d9ff"/>
+      <stop offset="1" stop-color="#48ff9b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#03070d"/>
+  <path d="M8 14h48v8L24 48h32v8H8v-8l32-26H8z" fill="url(#g)"/>
+  <path d="M10 10h18M36 54h18" stroke="#35d9ff" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+</svg>
