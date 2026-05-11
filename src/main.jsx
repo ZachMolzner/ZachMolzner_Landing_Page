@@ -2,6 +2,21 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
+const contactLinks = {
+  // Update these values when you want to change your public contact links.
+  email: 'Zamolzner@gmail.com',
+  github: 'https://github.com/ZachMolzner',
+  linkedin: 'https://www.linkedin.com/in/zmolzner',
+};
+
+const identityBadges = [
+  'Educator',
+  'Software Engineer',
+  'Instructional Designer',
+  'React Developer',
+  'EdTech Builder',
+];
+
 const softwareSkills = [
   'JavaScript',
   'React',
@@ -24,12 +39,31 @@ const educationSkills = [
   'EdTech',
 ];
 
+const bringItems = [
+  {
+    title: 'Classroom-Tested Communication',
+    text: 'I know how to explain complex ideas clearly, support different learners, and build trust quickly.',
+  },
+  {
+    title: 'Full-Stack Problem Solving',
+    text: 'I build React apps, connect APIs, structure data, and think through real user workflows.',
+  },
+  {
+    title: 'Instructional Design Mindset',
+    text: 'I create learning experiences with clear objectives, scaffolding, assessments, and practical outcomes.',
+  },
+  {
+    title: 'Systems & Strategy Thinking',
+    text: 'I enjoy designing tools, game-inspired systems, dashboards, and workflows that help people make better decisions.',
+  },
+];
+
 const projects = [
   {
     title: 'Ivalice Chronicles / Final Fantasy Tactics Party Optimizer',
     description:
-      'React app for building and optimizing tactical RPG parties using roles, job data, and party coverage analysis.',
-    tags: ['React', 'Game Tools', 'Optimization'],
+      'A tactical RPG party optimizer built with React that analyzes job roles, party coverage, and character abilities to help users build stronger team compositions.',
+    tags: ['React', 'Tactical Systems', 'Optimization'],
     // TODO: Replace this placeholder with the real repository URL.
     github: '#',
     // TODO: Replace this placeholder with the real live demo URL.
@@ -38,7 +72,7 @@ const projects = [
   {
     title: 'SarahNode AI Assistant',
     description:
-      'Local-first AI companion project using FastAPI, React, WebSockets, voice, avatar systems, and event-driven architecture.',
+      'A local-first AI companion project combining React, FastAPI, WebSockets, voice systems, avatar interactions, and event-driven architecture.',
     tags: ['React', 'FastAPI', 'WebSockets'],
     // TODO: Replace this placeholder with the real repository URL.
     github: '#',
@@ -46,12 +80,20 @@ const projects = [
   {
     title: 'Curriculum / Learning Design Portfolio',
     description:
-      'Collection of lesson plans, rubrics, assessments, slide decks, and student-facing learning materials.',
+      'A portfolio of lesson plans, rubrics, assessments, guided projects, student-facing materials, and professional learning resources designed for real classrooms.',
     tags: ['Curriculum', 'Assessment', 'EdTech'],
     // TODO: Replace this placeholder with the real portfolio link when available.
     linkText: 'Coming Soon',
     link: '#',
   },
+];
+
+const currentFocus = [
+  'Building production-ready React projects',
+  'Improving full-stack architecture',
+  'Creating instructional design samples',
+  'Applying for software engineering, front-end, curriculum design, and EdTech roles',
+  'Building portfolio projects that connect education and technology',
 ];
 
 function App() {
@@ -64,6 +106,7 @@ function App() {
           </a>
           <div className="nav-links">
             <a href="#about">About</a>
+            <a href="#bring">What I Bring</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#resume">Resume</a>
@@ -75,13 +118,24 @@ function App() {
       <main>
         <section id="hero" className="hero section-shell">
           <div className="hero-content">
-            <p className="eyebrow">Portfolio for software, learning, and product-minded teams</p>
+            <p className="eyebrow">Builder + educator + systems thinker</p>
             <h1>Zach Molzner</h1>
-            <h2>Software Engineer | Educator | Instructional Designer</h2>
+            <h2>Software Engineer • Educator • Instructional Designer</h2>
             <p className="hero-pitch">
-              Former educator turned software engineer who builds user-friendly web apps,
-              learning tools, and technology-driven instructional experiences.
+              I build web apps, learning systems, and student-centered digital experiences that
+              make information easier to use, understand, and act on.
             </p>
+            <p className="mission-line">
+              From the classroom to the codebase, I turn complex systems into clear, useful
+              experiences.
+            </p>
+            <div className="badge-row" aria-label="Professional identity badges">
+              {identityBadges.map((badge) => (
+                <span className="status-pill" key={badge}>
+                  {badge}
+                </span>
+              ))}
+            </div>
             <div className="button-row" aria-label="Portfolio actions">
               <a className="button primary" href="#resume">
                 View Resume
@@ -94,39 +148,55 @@ function App() {
               </a>
             </div>
           </div>
-          <aside className="hero-card" aria-label="Career focus summary">
-            <span className="status-pill">Open to junior roles</span>
-            <h3>Blending classroom leadership with full-stack development.</h3>
+          <aside className="hero-card command-panel" aria-label="Career focus summary">
+            <span className="panel-label">Mission Brief</span>
+            <h3>Useful tools. Clear learning. Stronger decisions.</h3>
             <p>
-              I bring strong communication, systems thinking, and learner-centered design to
-              engineering teams, instructional design groups, and EdTech products.
+              I bring classroom leadership, full-stack development, instructional design, and a
+              tactical systems mindset to teams building practical, human-centered products.
             </p>
           </aside>
         </section>
 
-        <section id="about" className="section-shell split-section">
+        <section id="about" className="section-shell split-section tech-divider">
           <div>
             <p className="section-kicker">About Me</p>
             <h2>Educator mindset. Engineering execution.</h2>
           </div>
-          <div className="card large-card">
+          <div className="card large-card command-panel">
             <p>
               I am a former educator transitioning into software engineering with a practical,
-              human-centered approach to building technology. My classroom experience shaped how
-              I communicate clearly, break down complex ideas, design curriculum around outcomes,
-              and guide people through challenging problems.
+              human-centered approach to building technology. My classroom experience shaped how I
+              communicate clearly, break down complex ideas, design curriculum around outcomes, and
+              guide people through challenging problems.
             </p>
             <p>
               Today, I apply that same discipline to full-stack development: planning useful
               features, building responsive interfaces, connecting data through APIs, and testing
               ideas with the end user in mind. Whether I am developing a React application or
-              designing learning materials, my goal is to create tools that are clear, reliable,
-              and genuinely helpful.
+              designing learning materials, my goal is to create tools that are clear, reliable, and
+              genuinely helpful.
             </p>
           </div>
         </section>
 
-        <section id="skills" className="section-shell">
+        <section id="bring" className="section-shell tech-divider">
+          <div className="section-heading">
+            <p className="section-kicker">What I Bring</p>
+            <h2>Practical strengths for code, learning, and product teams</h2>
+          </div>
+          <div className="bring-grid">
+            {bringItems.map((item, index) => (
+              <article className="card feature-card command-panel" key={item.title}>
+                <span className="panel-label">Signal {String(index + 1).padStart(2, '0')}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="skills" className="section-shell tech-divider">
           <div className="section-heading">
             <p className="section-kicker">Skills</p>
             <h2>Technical and instructional strengths</h2>
@@ -137,15 +207,16 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="section-shell">
+        <section id="projects" className="section-shell tech-divider">
           <div className="section-heading">
             <p className="section-kicker">Featured Projects</p>
-            <h2>Selected work across web apps and learning design</h2>
+            <h2>Portfolio work with a builder’s mindset</h2>
           </div>
           <div className="project-grid">
-            {projects.map((project) => (
-              <article className="card project-card" key={project.title}>
+            {projects.map((project, index) => (
+              <article className="card project-card command-panel" key={project.title}>
                 <div>
+                  <span className="panel-label">Project {String(index + 1).padStart(2, '0')}</span>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                 </div>
@@ -172,8 +243,8 @@ function App() {
           </div>
         </section>
 
-        <section id="resume" className="section-shell">
-          <div className="resume-card">
+        <section id="resume" className="section-shell tech-divider">
+          <div className="resume-card command-panel">
             <div className="resume-intro">
               <p className="section-kicker">Resume Preview</p>
               <h2>Ready for engineering and instructional design opportunities</h2>
@@ -211,13 +282,27 @@ function App() {
           </div>
         </section>
 
-        <section id="career-focus" className="section-shell">
+        <section id="current-focus" className="section-shell tech-divider">
+          <div className="section-heading">
+            <p className="section-kicker">Current Focus</p>
+            <h2>Where I am building momentum now</h2>
+          </div>
+          <div className="card focus-card command-panel">
+            <ul className="focus-list">
+              {currentFocus.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="career-focus" className="section-shell tech-divider">
           <div className="section-heading">
             <p className="section-kicker">Career Focus</p>
             <h2>Two aligned paths built on the same strengths</h2>
           </div>
           <div className="focus-grid">
-            <article className="card focus-card">
+            <article className="card focus-card command-panel">
               <h3>Software Engineering Roles</h3>
               <p>
                 I am targeting junior full-stack software engineer and front-end developer roles
@@ -225,7 +310,7 @@ function App() {
                 and thoughtful user experiences while continuing to grow with a collaborative team.
               </p>
             </article>
-            <article className="card focus-card">
+            <article className="card focus-card command-panel">
               <h3>Instructional Design / Curriculum Roles</h3>
               <p>
                 My education background supports curriculum, instructional design, and EdTech roles
@@ -237,7 +322,7 @@ function App() {
           </div>
         </section>
 
-        <section id="contact" className="section-shell contact-section">
+        <section id="contact" className="section-shell contact-section tech-divider">
           <div>
             <p className="section-kicker">Contact</p>
             <h2>Let’s build something useful.</h2>
@@ -246,11 +331,12 @@ function App() {
               instructional design, and EdTech opportunities.
             </p>
           </div>
-          <address className="card contact-card">
-            {/* TODO: Update this email address with your preferred professional email. */}
-            <a href="mailto:your.email@example.com">your.email@example.com</a>
-            <a href="https://github.com/ZachMolzner">github.com/ZachMolzner</a>
-            <a href="https://www.linkedin.com/in/zmolzner">linkedin.com/in/zmolzner</a>
+          <address className="card contact-card command-panel">
+            <span className="panel-label">Open Channel</span>
+            {/* TODO: Update contactLinks above when you want to change public contact details. */}
+            <a href={`mailto:${contactLinks.email}`}>Email: {contactLinks.email}</a>
+            <a href={contactLinks.github}>GitHub: {contactLinks.github}</a>
+            <a href={contactLinks.linkedin}>LinkedIn: {contactLinks.linkedin}</a>
           </address>
         </section>
       </main>
@@ -260,7 +346,7 @@ function App() {
 
 function SkillGroup({ title, skills }) {
   return (
-    <article className="card skill-card">
+    <article className="card skill-card command-panel">
       <h3>{title}</h3>
       <ul className="skill-list">
         {skills.map((skill) => (
