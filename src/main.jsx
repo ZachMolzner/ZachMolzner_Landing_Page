@@ -21,44 +21,122 @@ const identityBadges = [
   'EdTech Builder',
 ];
 
-const softwareSkills = [
-  'JavaScript',
-  'React',
-  'Node.js',
-  'Express',
-  'MongoDB',
-  'REST APIs',
-  'Git/GitHub',
-  'Vite',
-  'Responsive Design',
-];
-
-const educationSkills = [
-  'Curriculum Development',
-  'Lesson Planning',
-  'Assessment Design',
-  'Student Engagement',
-  'Training Materials',
-  'Data-Informed Instruction',
-  'EdTech',
+const skillCategories = [
+  {
+    title: 'Frontend Development',
+    skills: [
+      'JavaScript (ES6+)',
+      'React',
+      'HTML5',
+      'CSS3',
+      'Responsive Design',
+      'Component Architecture',
+      'Dynamic UI Rendering',
+      'State Management',
+    ],
+  },
+  {
+    title: 'Backend Development',
+    skills: [
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'REST APIs',
+      'JWT Authentication',
+      'API Integration',
+      'Data Organization',
+    ],
+  },
+  {
+    title: 'Tools & Workflow',
+    skills: [
+      'Git',
+      'GitHub',
+      'GitHub Actions',
+      'npm',
+      'Webpack',
+      'Vite',
+      'Agile Collaboration',
+      'Documentation',
+    ],
+  },
+  {
+    title: 'Architecture & Concepts',
+    skills: [
+      'MVC Architecture',
+      'Object-Oriented Programming',
+      'Component Architecture',
+      'Systems Thinking',
+      'Workflow Design',
+      'Problem Solving',
+      'Maintainable Code',
+    ],
+  },
+  {
+    title: 'Instructional Design & Education',
+    skills: [
+      'Curriculum Development',
+      'Instructional Design',
+      'Technical Training',
+      'Learning Systems',
+      'Educational Technology',
+      'Classroom Management',
+      'Data Analysis',
+    ],
+  },
+  {
+    title: 'Leadership & Communication',
+    skills: [
+      'Public Speaking',
+      'Team Leadership',
+      'Mentorship',
+      'Staff Development',
+      'Operational Organization',
+      'Communication',
+      'Adaptability',
+    ],
+  },
 ];
 
 const bringItems = [
   {
     title: 'Classroom-Tested Communication',
-    text: 'I know how to explain complex ideas clearly, support different learners, and build trust quickly.',
+    text: 'More than ten years in education taught me how to read a room, explain difficult ideas without making people feel small, and adjust my communication for different learners, teammates, and personalities. That shows up in engineering when I am breaking down a technical problem, presenting a feature decision, writing documentation, or helping someone understand how a system works.',
+  },
+  {
+    title: 'Systems & Strategic Thinking',
+    text: 'I naturally look for structure: the workflow behind the problem, the rules that shape behavior, and the small changes that make a system easier to use over time. That mindset connects my interest in tactical games, dashboards, AI assistants, and educational tools with the engineering work of designing maintainable architecture, clean data flow, and practical interfaces.',
   },
   {
     title: 'Full-Stack Problem Solving',
-    text: 'I build React apps, connect APIs, structure data, and think through real user workflows.',
+    text: 'My technical growth is centered on building real applications with React, JavaScript, APIs, backend services, authentication, and organized data. I care about the full path from a user need to a working feature: responsive UI, clear state, reliable routes, protected access, readable code, and decisions that make the next feature easier to build.',
   },
   {
-    title: 'Instructional Design Mindset',
-    text: 'I create learning experiences with clear objectives, scaffolding, assessments, and practical outcomes.',
+    title: 'Leadership & Reliability',
+    text: 'In education, I have been trusted with responsibility for students, staff support, training, daily operations, and initiatives that needed steady follow-through. I am used to being someone people rely on: staying calm under pressure, solving problems quickly, communicating clearly, and adapting when the plan changes. That reliability is the same standard I bring to a development team.',
+  },
+];
+
+const resumeHighlights = [
+  {
+    title: 'Career Summary',
+    text: 'Former educator and emerging software engineer combining MERN stack training with 13+ years of leadership, communication, instructional systems, and operational problem-solving experience. I build responsive, user-focused applications and bring a practical understanding of how people learn, work, and adopt new tools.',
   },
   {
-    title: 'Systems & Strategy Thinking',
-    text: 'I enjoy designing tools, game-inspired systems, dashboards, and workflows that help people make better decisions.',
+    title: 'Education & Certifications',
+    text: 'Software engineering training focused on JavaScript, React, Node.js, Express, MongoDB, REST APIs, authentication, responsive UI development, and modern front-end workflows, supported by extensive professional experience in curriculum development, instructional leadership, and technical training.',
+  },
+  {
+    title: 'Technical Skills',
+    text: 'JavaScript (ES6+), React, HTML5, CSS3, Node.js, Express.js, MongoDB, REST APIs, JWT authentication, Git, GitHub, Vite, Webpack, MVC architecture, object-oriented programming, component architecture, API integration, dynamic rendering, and state management.',
+  },
+  {
+    title: 'Engineering Experience',
+    text: 'Built full-stack and front-end portfolio projects using React, JavaScript, API-connected data, authentication workflows, protected routes, reusable components, responsive layouts, and clear UI patterns. Project work includes MERN applications, an AI assistant interface, and systems-driven tools for decision support.',
+  },
+  {
+    title: 'Leadership Experience',
+    text: 'Led classrooms, supported staff and students, developed curriculum and learning systems, trained others, organized operations, used data to guide decisions, and communicated with a wide range of stakeholders. That background strengthened my ability to stay dependable, teach complex concepts, and guide work from ambiguity to action.',
   },
 ];
 
@@ -198,11 +276,10 @@ const projects = [
 ];
 
 const currentFocus = [
-  'Building production-ready React projects',
-  'Improving full-stack architecture',
-  'Creating instructional design samples',
-  'Applying for software engineering, front-end, curriculum design, and EdTech roles',
-  'Building portfolio projects that connect education and technology',
+  'I am intentionally moving fully into software engineering while continuing to build on the strengths that made me effective in education: patience, structure, clear communication, and a habit of helping people move from confusion to confidence.',
+  'Each project is a chance to get sharper with modern engineering practices: React architecture, API design, authentication, state management, testing assumptions, and writing code that another developer could understand and extend.',
+  'I am especially drawn to tools that sit at the intersection of technology and learning: EdTech platforms, AI-assisted workflows, dashboards, and applications that make complex information easier to act on.',
+  'Right now I am looking for a development team where I can contribute, ask good questions, learn from experienced engineers, and steadily grow into the kind of teammate people trust with important work.',
 ];
 
 function App() {
@@ -268,10 +345,22 @@ function App() {
           </div>
           <aside className="hero-card command-panel" aria-label="Career focus summary">
             <span className="panel-label">Mission Brief</span>
-            <h3>Useful tools. Clear learning. Stronger decisions.</h3>
+            <h3>Building useful systems from a teacher’s point of view.</h3>
             <p>
-              I bring classroom leadership, full-stack development, instructional design, and a
-              tactical systems mindset to teams building practical, human-centered products.
+              After more than a decade in education and instructional leadership, I moved into
+              software engineering with the same core approach: understand the people, clarify the
+              problem, and build something that helps them move forward.
+            </p>
+            <p>
+              Whether I am shaping a React interface, connecting backend services, designing an
+              instructional workflow, or experimenting with AI-assisted tools, I care about clarity,
+              usability, structure, and long-term growth. Teaching taught me to lead, adapt,
+              communicate under pressure, and turn complicated ideas into practical next steps.
+            </p>
+            <p>
+              Today I am focused on modern web applications, educational technology, and systems
+              that combine technical problem-solving with a human understanding of how people learn
+              and work.
             </p>
           </aside>
         </section>
@@ -317,11 +406,18 @@ function App() {
         <section id="skills" className="section-shell tech-divider">
           <div className="section-heading">
             <p className="section-kicker">Skills</p>
-            <h2>Technical and instructional strengths</h2>
+            <h2>Technical depth backed by leadership and learning design</h2>
+            <p>
+              My background combines software engineering skills with the leadership, communication,
+              instructional design, and systems-building experience developed over 10+ years in
+              education. I am growing as an engineer while bringing a proven ability to teach,
+              organize, document, and help people succeed.
+            </p>
           </div>
           <div className="skills-grid">
-            <SkillGroup title="Software Development" skills={softwareSkills} />
-            <SkillGroup title="Instructional Design / Education" skills={educationSkills} />
+            {skillCategories.map((category) => (
+              <SkillGroup key={category.title} title={category.title} skills={category.skills} />
+            ))}
           </div>
         </section>
 
@@ -380,10 +476,11 @@ function App() {
           <div className="resume-card command-panel">
             <div className="resume-intro">
               <p className="section-kicker">Resume Preview</p>
-              <h2>Ready for engineering and instructional design opportunities</h2>
+              <h2>A quick scan of the experience behind the portfolio</h2>
               <p>
-                This resume snapshot highlights the transferable strengths, technical training,
-                and project work that support both career paths.
+                This snapshot is not the full resume. It is the short version of the throughline:
+                MERN stack development, responsive React work, authentication and API experience,
+                and more than a decade of trusted leadership in education and learning systems.
               </p>
               {/* Resume file is served from Vite's public assets folder. */}
               <a className="button primary" href={resumeHref} download>
@@ -391,26 +488,9 @@ function App() {
               </a>
             </div>
             <div className="resume-list" aria-label="Resume highlights">
-              <ResumeItem
-                title="Professional Summary"
-                text="Software engineer and former educator focused on user-friendly web apps, instructional tools, and clear technical communication."
-              />
-              <ResumeItem
-                title="Technical Skills"
-                text="JavaScript, React, Node.js, Express, MongoDB, REST APIs, Git/GitHub, Vite, and responsive front-end development."
-              />
-              <ResumeItem
-                title="Education / Training"
-                text="Software development training paired with professional experience designing curriculum, assessments, and student-centered learning experiences."
-              />
-              <ResumeItem
-                title="Teaching Experience"
-                text="Classroom leadership, lesson planning, assessment design, data-informed instruction, stakeholder communication, and student engagement."
-              />
-              <ResumeItem
-                title="Software Projects"
-                text="React portfolio projects, tactical RPG party optimizer, local-first AI assistant architecture, and learning design portfolio materials."
-              />
+              {resumeHighlights.map((item) => (
+                <ResumeItem key={item.title} title={item.title} text={item.text} />
+              ))}
             </div>
           </div>
         </section>
@@ -418,9 +498,13 @@ function App() {
         <section id="current-focus" className="section-shell tech-divider">
           <div className="section-heading">
             <p className="section-kicker">Current Focus</p>
-            <h2>Where I am building momentum now</h2>
+            <h2>Growing into the next version of my work</h2>
+            <p>
+              I am not trying to erase my education background; I am using it as part of the
+              foundation for becoming a thoughtful, reliable engineer.
+            </p>
           </div>
-          <div className="card focus-card command-panel">
+          <div className="card focus-card current-focus-card command-panel">
             <ul className="focus-list">
               {currentFocus.map((item) => (
                 <li key={item}>{item}</li>
