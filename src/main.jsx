@@ -412,6 +412,63 @@ const petals = [
   },
 ];
 
+const bambooLeaves = [
+  {
+    left: "16%",
+    size: "1.1rem",
+    delay: "-8s",
+    duration: "54s",
+    drift: "5.2rem",
+    spin: "72deg",
+    opacity: 0.16,
+  },
+  {
+    left: "34%",
+    size: "0.9rem",
+    delay: "-31s",
+    duration: "62s",
+    drift: "-4.1rem",
+    spin: "-58deg",
+    opacity: 0.13,
+  },
+  {
+    left: "57%",
+    size: "1rem",
+    delay: "-18s",
+    duration: "58s",
+    drift: "4.6rem",
+    spin: "64deg",
+    opacity: 0.14,
+  },
+  {
+    left: "78%",
+    size: "0.82rem",
+    delay: "-42s",
+    duration: "66s",
+    drift: "-5.4rem",
+    spin: "-82deg",
+    opacity: 0.12,
+  },
+  {
+    left: "92%",
+    size: "1.02rem",
+    delay: "-24s",
+    duration: "60s",
+    drift: "3.6rem",
+    spin: "54deg",
+    opacity: 0.13,
+  },
+  {
+    left: "6%",
+    size: "0.86rem",
+    delay: "-48s",
+    duration: "68s",
+    drift: "4.8rem",
+    spin: "76deg",
+    opacity: 0.11,
+  },
+];
+
 const currentFocus = [
   "I am intentionally moving fully into software engineering while continuing to build on the strengths that made me effective in education: patience, structure, clear communication, and a habit of helping people move from confusion to confidence.",
   "Each project is a chance to get sharper with modern engineering practices: React architecture, API design, authentication, state management, testing assumptions, and writing code that another developer could understand and extend.",
@@ -424,7 +481,7 @@ function App() {
 
   return (
     <>
-      <PetalLayer />
+      <FallingNatureLayer />
 
       <header className="site-header">
         <nav className="nav" aria-label="Primary navigation">
@@ -851,24 +908,44 @@ function App() {
   );
 }
 
-function PetalLayer() {
+function FallingNatureLayer() {
   return (
-    <div className="petal-layer" aria-hidden="true">
-      {petals.map((petal, index) => (
-        <span
-          className="petal"
-          key={`${petal.left}-${index}`}
-          style={{
-            "--petal-left": petal.left,
-            "--petal-size": petal.size,
-            "--petal-delay": petal.delay,
-            "--petal-duration": petal.duration,
-            "--petal-drift": petal.drift,
-            "--petal-spin": petal.spin,
-            "--petal-opacity": petal.opacity,
-          }}
-        />
-      ))}
+    <div className="falling-nature-layer" aria-hidden="true">
+      <div className="bamboo-leaf-layer">
+        {bambooLeaves.map((leaf, index) => (
+          <span
+            className="bamboo-leaf"
+            key={`bamboo-leaf-${leaf.left}-${index}`}
+            style={{
+              "--leaf-left": leaf.left,
+              "--leaf-size": leaf.size,
+              "--leaf-delay": leaf.delay,
+              "--leaf-duration": leaf.duration,
+              "--leaf-drift": leaf.drift,
+              "--leaf-spin": leaf.spin,
+              "--leaf-opacity": leaf.opacity,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="petal-layer">
+        {petals.map((petal, index) => (
+          <span
+            className="petal"
+            key={`petal-${petal.left}-${index}`}
+            style={{
+              "--petal-left": petal.left,
+              "--petal-size": petal.size,
+              "--petal-delay": petal.delay,
+              "--petal-duration": petal.duration,
+              "--petal-drift": petal.drift,
+              "--petal-spin": petal.spin,
+              "--petal-opacity": petal.opacity,
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
