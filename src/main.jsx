@@ -103,18 +103,22 @@ const skillCategories = [
 const bringItems = [
   {
     title: "Classroom-Tested Communication",
+    takeaway: "I make complex ideas easier to understand.",
     text: "More than ten years in education taught me how to read a room, explain difficult ideas without making people feel small, and adjust my communication for different learners, teammates, and personalities. That shows up in engineering when I am breaking down a technical problem, presenting a feature decision, writing documentation, or helping someone understand how a system works.",
   },
   {
     title: "Systems & Strategic Thinking",
+    takeaway: "I see patterns, workflows, and practical improvements.",
     text: "I naturally look for structure: the workflow behind the problem, the rules that shape behavior, and the small changes that make a system easier to use over time. That mindset connects my interest in tactical games, dashboards, AI assistants, and educational tools with the engineering work of designing maintainable architecture, clean data flow, and practical interfaces.",
   },
   {
     title: "Full-Stack Problem Solving",
+    takeaway: "I connect user needs to working features.",
     text: "My technical growth is centered on building real applications with React, JavaScript, APIs, backend services, authentication, and organized data. I care about the full path from a user need to a working feature: responsive UI, clear state, reliable routes, protected access, readable code, and decisions that make the next feature easier to build.",
   },
   {
     title: "Leadership & Reliability",
+    takeaway: "I bring calm follow-through when work gets complicated.",
     text: "In education, I have been trusted with responsibility for students, staff support, training, daily operations, and initiatives that needed steady follow-through. I am used to being someone people rely on: staying calm under pressure, solving problems quickly, communicating clearly, and adapting when the plan changes. That reliability is the same standard I bring to a development team.",
   },
 ];
@@ -332,21 +336,18 @@ function App() {
           <a className="logo" href="#hero" aria-label="Zach Molzner home">
             ZM
           </a>
-          <div className="nav-links">
+          <div className="nav-links" aria-label="Page sections">
             <a href="#about">About</a>
-            <a href="#bring">What I Bring</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href={resumeHref} download>
-              Resume
-            </a>
+            <a href="#resume">Resume</a>
             <a href="#contact">Contact</a>
           </div>
         </nav>
       </header>
 
       <main>
-        <section id="hero" className="hero section-shell">
+        <section id="hero" className="hero section-shell blossom-divider">
           <div className="hero-profile">
             <div className="profile-frame">
               <img
@@ -360,6 +361,7 @@ function App() {
               />
             </div>
           </div>
+
           <div className="hero-content">
             <p className="eyebrow">Builder + educator + systems thinker</p>
             <h1>Zach Molzner</h1>
@@ -373,10 +375,7 @@ function App() {
               From the classroom to the codebase, I turn complex systems into
               clear, useful experiences.
             </p>
-            <div
-              className="badge-row"
-              aria-label="Professional identity badges"
-            >
+            <div className="badge-row" aria-label="Professional identity badges">
               {identityBadges.map((badge) => (
                 <span className="status-pill" key={badge}>
                   {badge}
@@ -387,54 +386,33 @@ function App() {
               <a className="button primary" href={resumeHref} download>
                 Download Resume
               </a>
-              <a className="button secondary" href="#projects">
-                View Projects
-              </a>
-              <a className="button ghost" href="#contact">
+              <a className="button secondary" href="#contact">
                 Contact Me
+              </a>
+              <a className="button ghost" href={contactLinks.linkedin}>
+                LinkedIn
               </a>
             </div>
           </div>
-          <aside
-            className="hero-card command-panel"
-            aria-label="Career focus summary"
-          >
-            <span className="panel-label">Mission Brief</span>
-            <h3>Building useful systems from a teacher’s point of view.</h3>
-            <p>
-              After more than a decade in education and instructional
-              leadership, I moved into software engineering with the same core
-              approach: understand the people, clarify the problem, and build
-              something that helps them move forward.
-            </p>
-            <p>
-              Whether I am shaping a React interface, connecting backend
-              services, designing an instructional workflow, or experimenting
-              with AI-assisted tools, I care about clarity, usability,
-              structure, and long-term growth. Teaching taught me to lead,
-              adapt, communicate under pressure, and turn complicated ideas into
-              practical next steps.
-            </p>
-            <p>
-              Today I am focused on modern web applications, educational
-              technology, and systems that combine technical problem-solving
-              with a human understanding of how people learn and work.
-            </p>
-          </aside>
         </section>
 
         <section
           id="snapshot"
-          className="section-shell snapshot-section tech-divider"
+          className="section-shell snapshot-section blossom-divider"
           aria-labelledby="snapshot-heading"
         >
           <div className="section-heading compact-heading">
             <p className="section-kicker">Quick Snapshot</p>
             <h2 id="snapshot-heading">Fast signal for where I add value</h2>
+            <p>
+              A quick orientation before the deeper story: I combine modern web
+              development practice with a long background in leadership,
+              teaching, and learning systems.
+            </p>
           </div>
           <div className="snapshot-grid" aria-label="Portfolio quick snapshot">
             {quickSnapshot.map((item, index) => (
-              <article className="snapshot-chip command-panel" key={item}>
+              <article className="snapshot-chip paper-card" key={item}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                 <strong>{item}</strong>
               </article>
@@ -442,15 +420,23 @@ function App() {
           </div>
         </section>
 
-        <section
-          id="about"
-          className="section-shell split-section tech-divider"
-        >
-          <div>
+        <section id="about" className="section-shell split-section blossom-divider">
+          <div className="section-heading side-heading">
             <p className="section-kicker">About Me</p>
-            <h2>Educator mindset. Engineering execution.</h2>
+            <h2>From Classroom Systems to Code</h2>
+            <p>
+              My path into engineering is rooted in helping people move from
+              confusion to confidence.
+            </p>
           </div>
-          <div className="card large-card command-panel">
+          <div className="card large-card paper-card readable-stack">
+            <h3>Building useful systems from a teacher’s point of view.</h3>
+            <p>
+              After more than a decade in education and instructional leadership,
+              I moved into software engineering with the same core approach:
+              understand the people, clarify the problem, and build something
+              that helps them move forward.
+            </p>
             <p>
               I am a former educator transitioning into software engineering
               with a practical, human-centered approach to building technology.
@@ -466,54 +452,46 @@ function App() {
               learning materials, my goal is to create tools that are clear,
               reliable, and genuinely helpful.
             </p>
-          </div>
-        </section>
-
-        <section id="background" className="section-shell split-section tech-divider">
-          <div>
-            <p className="section-kicker">Why My Background Matters</p>
-            <h2>I build with people in mind, not just code.</h2>
-          </div>
-          <div className="card large-card command-panel">
             <p>
-              I have spent 13+ years explaining complex ideas clearly, guiding
-              people through frustration, and helping learners move from
-              uncertainty to confidence. That experience makes me stronger as a
-              developer because software is never only about syntax; it is about
-              how real people think, struggle, learn, and adapt.
+              Whether I am shaping a React interface, connecting backend
+              services, designing an instructional workflow, or experimenting
+              with AI-assisted tools, I care about clarity, usability,
+              structure, and long-term growth. Teaching taught me to lead,
+              adapt, communicate under pressure, and turn complicated ideas into
+              practical next steps.
             </p>
             <p>
-              I have been trusted to lead, train, organize, and solve problems
-              under pressure. I bring that same communication, patience,
-              structure, and leadership into technical work: clarifying needs,
-              breaking systems into understandable parts, documenting decisions,
-              and building tools that feel useful for the people using them.
+              Today I am focused on modern web applications, educational
+              technology, and systems that combine technical problem-solving
+              with a human understanding of how people learn and work.
             </p>
           </div>
         </section>
 
-        <section id="bring" className="section-shell tech-divider">
+        <section id="bring" className="section-shell blossom-divider">
           <div className="section-heading">
             <p className="section-kicker">What I Bring</p>
             <h2>Practical strengths for code, learning, and product teams</h2>
+            <p>
+              These are the habits I bring from classrooms, operations, and
+              full-stack project work into every technical team environment.
+            </p>
           </div>
           <div className="bring-grid">
             {bringItems.map((item, index) => (
-              <article
-                className="card feature-card command-panel"
-                key={item.title}
-              >
+              <article className="card feature-card paper-card" key={item.title}>
                 <span className="panel-label">
-                  Signal {String(index + 1).padStart(2, "0")}
+                  Strength {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3>{item.title}</h3>
+                <p className="takeaway"><strong>{item.takeaway}</strong></p>
                 <p>{item.text}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="skills" className="section-shell tech-divider">
+        <section id="skills" className="section-shell blossom-divider">
           <div className="section-heading">
             <p className="section-kicker">Skills</p>
             <h2>Technical depth backed by leadership and learning design</h2>
@@ -536,10 +514,15 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="section-shell tech-divider">
+        <section id="projects" className="section-shell blossom-divider">
           <div className="section-heading">
             <p className="section-kicker">Featured Projects</p>
             <h2>Portfolio work with a builder’s mindset</h2>
+            <p>
+              Case-study cards show the problem space, feature set, technical
+              stack, and growth focus for each build so the work is easier to
+              compare quickly.
+            </p>
           </div>
           <button
             className={`projects-toggle${projectsOpen ? " is-open" : ""}`}
@@ -566,18 +549,113 @@ function App() {
           >
             <div className="project-grid">
               {projects.map((project, index) => (
-                <ProjectCard
-                  key={project.title}
-                  project={project}
-                  index={index}
-                />
+                <ProjectCard key={project.title} project={project} index={index} />
               ))}
             </div>
           </div>
         </section>
 
-        <section id="resume" className="section-shell tech-divider">
-          <div className="resume-card command-panel">
+        <section id="approach" className="section-shell blossom-divider">
+          <div className="section-heading">
+            <p className="section-kicker">How I Approach Building</p>
+            <h2>Systems thinking, clear steps, practical iteration</h2>
+            <p>
+              My workflow starts with people and structure, then moves toward
+              clean execution, accessibility, testing, and steady improvement.
+            </p>
+          </div>
+          <ol className="process-timeline">
+            {buildProcess.map((step, index) => (
+              <li className="process-step paper-card" key={step}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{step}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section id="background" className="section-shell split-section blossom-divider">
+          <div className="section-heading side-heading">
+            <p className="section-kicker">Why My Background Matters</p>
+            <h2>I build with people in mind, not just code.</h2>
+            <p>
+              Teaching, leadership, training, and engineering all require the
+              same discipline: make the complicated understandable and useful.
+            </p>
+          </div>
+          <div className="background-stack">
+            <div className="card large-card paper-card readable-stack">
+              <p>
+                I have spent 13+ years explaining complex ideas clearly, guiding
+                people through frustration, and helping learners move from
+                uncertainty to confidence. That experience makes me stronger as a
+                developer because software is never only about syntax; it is about
+                how real people think, struggle, learn, and adapt.
+              </p>
+              <p>
+                I have been trusted to lead, train, organize, and solve problems
+                under pressure. I bring that same communication, patience,
+                structure, and leadership into technical work: clarifying needs,
+                breaking systems into understandable parts, documenting decisions,
+                and building tools that feel useful for the people using them.
+              </p>
+              <p>
+                I am not trying to erase my education background; I am using it as
+                part of the foundation for becoming a thoughtful, reliable
+                engineer.
+              </p>
+            </div>
+            <div className="focus-grid">
+              <article className="card focus-card paper-card">
+                <h3>Software Engineering Roles</h3>
+                <p>
+                  I am targeting junior full-stack software engineer and front-end
+                  developer roles where I can contribute React interfaces,
+                  API-connected features, responsive layouts, and thoughtful user
+                  experiences while continuing to grow with a collaborative team.
+                </p>
+              </article>
+              <article className="card focus-card paper-card">
+                <h3>Instructional Design / Curriculum Roles</h3>
+                <p>
+                  My education background supports curriculum, instructional
+                  design, and EdTech roles that require clear learning outcomes,
+                  engaging materials, assessment strategy, training documentation,
+                  and the ability to translate complex ideas into practical
+                  learning experiences.
+                </p>
+              </article>
+            </div>
+            <div className="card focus-card current-focus-card paper-card">
+              <ul className="focus-list">
+                {currentFocus.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="currently-learning" className="section-shell blossom-divider">
+          <div className="section-heading">
+            <p className="section-kicker">Currently Learning</p>
+            <h2>Active growth around modern product engineering</h2>
+            <p>
+              I am building momentum in the areas that help practical software
+              become more scalable, accessible, maintainable, and useful.
+            </p>
+          </div>
+          <ul className="learning-grid" aria-label="Currently learning topics">
+            {currentlyLearning.map((item) => (
+              <li className="learning-chip paper-card" key={item}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="resume" className="section-shell blossom-divider">
+          <div className="resume-card paper-card">
             <div className="resume-intro">
               <p className="section-kicker">Resume Preview</p>
               <h2>A quick scan of the experience behind the portfolio</h2>
@@ -594,78 +672,18 @@ function App() {
             </div>
             <div className="resume-list" aria-label="Resume highlights">
               {resumeHighlights.map((item) => (
-                <ResumeItem
-                  key={item.title}
-                  title={item.title}
-                  text={item.text}
-                />
+                <ResumeItem key={item.title} title={item.title} text={item.text} />
               ))}
             </div>
           </div>
         </section>
 
-        <section id="currently-learning" className="section-shell tech-divider">
-          <div className="section-heading">
-            <p className="section-kicker">Currently Learning</p>
-            <h2>Active growth around modern product engineering</h2>
-            <p>
-              I am building momentum in the areas that help practical software
-              become more scalable, accessible, maintainable, and useful.
-            </p>
-          </div>
-          <ul className="learning-grid" aria-label="Currently learning topics">
-            {currentlyLearning.map((item) => (
-              <li className="learning-chip command-panel" key={item}>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section id="approach" className="section-shell tech-divider">
-          <div className="section-heading">
-            <p className="section-kicker">How I Approach Building</p>
-            <h2>Systems thinking, clear steps, practical iteration</h2>
-            <p>
-              My workflow starts with people and structure, then moves toward
-              clean execution, accessibility, testing, and steady improvement.
-            </p>
-          </div>
-          <ol className="process-grid">
-            {buildProcess.map((step, index) => (
-              <li className="process-step command-panel" key={step}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{step}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <section id="current-focus" className="section-shell tech-divider">
-          <div className="section-heading">
-            <p className="section-kicker">Current Focus</p>
-            <h2>Growing into the next version of my work</h2>
-            <p>
-              I am not trying to erase my education background; I am using it as
-              part of the foundation for becoming a thoughtful, reliable
-              engineer.
-            </p>
-          </div>
-          <div className="card focus-card current-focus-card command-panel">
-            <ul className="focus-list">
-              {currentFocus.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section id="outside-code" className="section-shell split-section tech-divider">
-          <div>
+        <section id="outside-code" className="section-shell split-section blossom-divider">
+          <div className="section-heading side-heading">
             <p className="section-kicker">Outside of Code</p>
             <h2>The same curiosity shows up everywhere.</h2>
           </div>
-          <div className="card large-card command-panel">
+          <div className="card large-card paper-card">
             <p>
               Outside of programming, I am drawn to tactical game systems, AI
               interfaces, immersive technology, teaching, instructional design,
@@ -677,37 +695,9 @@ function App() {
           </div>
         </section>
 
-        <section id="career-focus" className="section-shell tech-divider">
-          <div className="section-heading">
-            <p className="section-kicker">Career Focus</p>
-            <h2>Two aligned paths built on the same strengths</h2>
-          </div>
-          <div className="focus-grid">
-            <article className="card focus-card command-panel">
-              <h3>Software Engineering Roles</h3>
-              <p>
-                I am targeting junior full-stack software engineer and front-end
-                developer roles where I can contribute React interfaces,
-                API-connected features, responsive layouts, and thoughtful user
-                experiences while continuing to grow with a collaborative team.
-              </p>
-            </article>
-            <article className="card focus-card command-panel">
-              <h3>Instructional Design / Curriculum Roles</h3>
-              <p>
-                My education background supports curriculum, instructional
-                design, and EdTech roles that require clear learning outcomes,
-                engaging materials, assessment strategy, training documentation,
-                and the ability to translate complex ideas into practical
-                learning experiences.
-              </p>
-            </article>
-          </div>
-        </section>
-
         <section
           id="contact"
-          className="section-shell contact-section final-cta tech-divider"
+          className="section-shell contact-section final-cta blossom-divider"
         >
           <div>
             <p className="section-kicker">Contact</p>
@@ -719,8 +709,8 @@ function App() {
               help people.
             </p>
           </div>
-          <address className="card contact-card command-panel">
-            <span className="panel-label">Open Channel</span>
+          <address className="card contact-card paper-card">
+            <span className="panel-label">Open to thoughtful teams</span>
             {/* TODO: Update contactLinks above when you want to change public contact details. */}
             <div className="button-row contact-actions" aria-label="Contact actions">
               <a
@@ -743,14 +733,15 @@ function App() {
           </address>
         </section>
       </main>
+
       <footer className="site-footer">
         <div className="footer-inner">
           <a className="logo footer-logo" href="#hero" aria-label="Back to top">
             ZM
           </a>
           <p>
-            Designed as a responsive cyberpunk engineering portfolio for
-            practical, human-centered software work.
+            Designed as a warm cherry blossom inspired portfolio for practical,
+            human-centered software work.
           </p>
           <nav className="footer-links" aria-label="Footer navigation">
             <a href="#projects">Projects</a>
@@ -768,8 +759,8 @@ function App() {
 function ProjectCard({ project, index }) {
   return (
     <article
-      className="card project-card command-panel"
-      style={{ "--project-delay": `${index * 110}ms` }}
+      className="card project-card paper-card"
+      style={{ "--project-delay": `${index * 70}ms` }}
     >
       <div className="project-card-header">
         <div className="project-meta-row">
@@ -782,13 +773,14 @@ function ProjectCard({ project, index }) {
         </div>
         <p className="project-type">{project.type}</p>
         <h3>{project.title}</h3>
-        <p className="project-overview">{project.overview}</p>
       </div>
 
-      <div
-        className="project-badge-row"
-        aria-label={`${project.title} project type badges`}
-      >
+      <section className="project-section" aria-label={`${project.title} overview`}>
+        <h4>Overview</h4>
+        <p className="project-overview">{project.overview}</p>
+      </section>
+
+      <div className="project-badge-row" aria-label={`${project.title} project type badges`}>
         {project.badges.map((badge) => (
           <span key={badge}>{badge}</span>
         ))}
@@ -796,10 +788,10 @@ function ProjectCard({ project, index }) {
 
       <div className="project-detail-grid">
         <ProjectList title="Key Features" items={project.keyFeatures} />
-        <ProjectList title="Focus Areas" items={project.focusAreas} />
+        <ProjectList title="Focus Areas / What I Learned" items={project.focusAreas} />
       </div>
 
-      <div className="project-stack">
+      <div className="project-stack project-section">
         <h4>Technical Stack</h4>
         <div className="tag-row" aria-label={`${project.title} technologies`}>
           {project.stack.map((tag) => (
@@ -808,8 +800,8 @@ function ProjectCard({ project, index }) {
         </div>
       </div>
 
-      <div className="project-learned">
-        <h4>What I Learned</h4>
+      <div className="project-learned project-section">
+        <h4>Learning Note</h4>
         <p>{project.learned}</p>
       </div>
     </article>
@@ -818,7 +810,7 @@ function ProjectCard({ project, index }) {
 
 function ProjectList({ title, items }) {
   return (
-    <div className="project-list-block">
+    <div className="project-list-block project-section">
       <h4>{title}</h4>
       <ul className="project-list">
         {items.map((item) => (
@@ -831,7 +823,7 @@ function ProjectList({ title, items }) {
 
 function SkillGroup({ title, skills }) {
   return (
-    <article className="card skill-card command-panel">
+    <article className="card skill-card paper-card">
       <h3>{title}</h3>
       <ul className="skill-list">
         {skills.map((skill) => (
@@ -844,7 +836,7 @@ function SkillGroup({ title, skills }) {
 
 function ResumeItem({ title, text }) {
   return (
-    <article>
+    <article className="resume-item">
       <h3>{title}</h3>
       <p>{text}</p>
     </article>
