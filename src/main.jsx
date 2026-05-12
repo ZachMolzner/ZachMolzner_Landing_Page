@@ -319,6 +319,99 @@ const buildProcess = [
   "Keep learning and iterating",
 ];
 
+const petals = [
+  {
+    left: "12%",
+    size: "0.62rem",
+    delay: "-3s",
+    duration: "32s",
+    drift: "3rem",
+    spin: "96deg",
+    opacity: 0.32,
+  },
+  {
+    left: "38%",
+    size: "0.48rem",
+    delay: "-17s",
+    duration: "38s",
+    drift: "-2.5rem",
+    spin: "-132deg",
+    opacity: 0.24,
+  },
+  {
+    left: "63%",
+    size: "0.56rem",
+    delay: "-9s",
+    duration: "35s",
+    drift: "2.2rem",
+    spin: "118deg",
+    opacity: 0.28,
+  },
+  {
+    left: "86%",
+    size: "0.42rem",
+    delay: "-24s",
+    duration: "42s",
+    drift: "-3.4rem",
+    spin: "-86deg",
+    opacity: 0.22,
+  },
+  {
+    left: "24%",
+    size: "0.68rem",
+    delay: "-13s",
+    duration: "36s",
+    drift: "3.1rem",
+    spin: "144deg",
+    opacity: 0.26,
+  },
+  {
+    left: "52%",
+    size: "0.5rem",
+    delay: "-29s",
+    duration: "44s",
+    drift: "-2rem",
+    spin: "-104deg",
+    opacity: 0.24,
+  },
+  {
+    left: "74%",
+    size: "0.58rem",
+    delay: "-6s",
+    duration: "34s",
+    drift: "2.8rem",
+    spin: "128deg",
+    opacity: 0.3,
+  },
+  {
+    left: "94%",
+    size: "0.46rem",
+    delay: "-21s",
+    duration: "40s",
+    drift: "-3rem",
+    spin: "-116deg",
+    opacity: 0.22,
+  },
+  {
+    left: "7%",
+    size: "0.54rem",
+    delay: "-15s",
+    duration: "46s",
+    drift: "1.8rem",
+    spin: "88deg",
+    opacity: 0.2,
+  },
+  {
+    left: "31%",
+    size: "0.4rem",
+    delay: "-33s",
+    duration: "48s",
+    drift: "-1.6rem",
+    spin: "-72deg",
+    opacity: 0.18,
+  },
+];
+
 const currentFocus = [
   "I am intentionally moving fully into software engineering while continuing to build on the strengths that made me effective in education: patience, structure, clear communication, and a habit of helping people move from confusion to confidence.",
   "Each project is a chance to get sharper with modern engineering practices: React architecture, API design, authentication, state management, testing assumptions, and writing code that another developer could understand and extend.",
@@ -331,6 +424,8 @@ function App() {
 
   return (
     <>
+      <PetalLayer />
+
       <header className="site-header">
         <nav className="nav" aria-label="Primary navigation">
           <a className="logo" href="#hero" aria-label="Zach Molzner home">
@@ -753,6 +848,28 @@ function App() {
         </div>
       </footer>
     </>
+  );
+}
+
+function PetalLayer() {
+  return (
+    <div className="petal-layer" aria-hidden="true">
+      {petals.map((petal, index) => (
+        <span
+          className="petal"
+          key={`${petal.left}-${index}`}
+          style={{
+            "--petal-left": petal.left,
+            "--petal-size": petal.size,
+            "--petal-delay": petal.delay,
+            "--petal-duration": petal.duration,
+            "--petal-drift": petal.drift,
+            "--petal-spin": petal.spin,
+            "--petal-opacity": petal.opacity,
+          }}
+        />
+      ))}
+    </div>
   );
 }
 
