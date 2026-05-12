@@ -420,7 +420,7 @@ const bambooLeaves = [
     duration: "54s",
     drift: "5.2rem",
     spin: "72deg",
-    opacity: 0.16,
+    opacity: 0.26,
   },
   {
     left: "34%",
@@ -429,7 +429,7 @@ const bambooLeaves = [
     duration: "62s",
     drift: "-4.1rem",
     spin: "-58deg",
-    opacity: 0.13,
+    opacity: 0.22,
   },
   {
     left: "57%",
@@ -438,7 +438,7 @@ const bambooLeaves = [
     duration: "58s",
     drift: "4.6rem",
     spin: "64deg",
-    opacity: 0.14,
+    opacity: 0.24,
   },
   {
     left: "78%",
@@ -447,7 +447,7 @@ const bambooLeaves = [
     duration: "66s",
     drift: "-5.4rem",
     spin: "-82deg",
-    opacity: 0.12,
+    opacity: 0.2,
   },
   {
     left: "92%",
@@ -456,7 +456,7 @@ const bambooLeaves = [
     duration: "60s",
     drift: "3.6rem",
     spin: "54deg",
-    opacity: 0.13,
+    opacity: 0.22,
   },
   {
     left: "6%",
@@ -465,7 +465,7 @@ const bambooLeaves = [
     duration: "68s",
     drift: "4.8rem",
     spin: "76deg",
-    opacity: 0.11,
+    opacity: 0.19,
   },
 ];
 
