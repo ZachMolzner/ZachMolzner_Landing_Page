@@ -327,7 +327,7 @@ const petals = [
     duration: "32s",
     drift: "3rem",
     spin: "96deg",
-    opacity: 0.32,
+    opacity: 0.13,
   },
   {
     left: "38%",
@@ -336,7 +336,7 @@ const petals = [
     duration: "38s",
     drift: "-2.5rem",
     spin: "-132deg",
-    opacity: 0.24,
+    opacity: 0.16,
   },
   {
     left: "63%",
@@ -345,7 +345,7 @@ const petals = [
     duration: "35s",
     drift: "2.2rem",
     spin: "118deg",
-    opacity: 0.28,
+    opacity: 0.12,
   },
   {
     left: "86%",
@@ -354,7 +354,7 @@ const petals = [
     duration: "42s",
     drift: "-3.4rem",
     spin: "-86deg",
-    opacity: 0.22,
+    opacity: 0.14,
   },
   {
     left: "24%",
@@ -363,7 +363,7 @@ const petals = [
     duration: "36s",
     drift: "3.1rem",
     spin: "144deg",
-    opacity: 0.26,
+    opacity: 0.17,
   },
   {
     left: "52%",
@@ -372,7 +372,7 @@ const petals = [
     duration: "44s",
     drift: "-2rem",
     spin: "-104deg",
-    opacity: 0.24,
+    opacity: 0.16,
   },
   {
     left: "74%",
@@ -381,7 +381,7 @@ const petals = [
     duration: "34s",
     drift: "2.8rem",
     spin: "128deg",
-    opacity: 0.3,
+    opacity: 0.19,
   },
   {
     left: "94%",
@@ -390,7 +390,7 @@ const petals = [
     duration: "40s",
     drift: "-3rem",
     spin: "-116deg",
-    opacity: 0.22,
+    opacity: 0.14,
   },
   {
     left: "7%",
@@ -399,7 +399,7 @@ const petals = [
     duration: "46s",
     drift: "1.8rem",
     spin: "88deg",
-    opacity: 0.2,
+    opacity: 0.13,
   },
   {
     left: "31%",
@@ -408,7 +408,7 @@ const petals = [
     duration: "48s",
     drift: "-1.6rem",
     spin: "-72deg",
-    opacity: 0.18,
+    opacity: 0.12,
   },
 ];
 
@@ -835,7 +835,7 @@ function App() {
             ZM
           </a>
           <p>
-            Designed as a warm cherry blossom inspired portfolio for practical,
+            Designed as a calm bamboo forest inspired portfolio with subtle cherry blossom accents for practical,
             human-centered software work.
           </p>
           <nav className="footer-links" aria-label="Footer navigation">
