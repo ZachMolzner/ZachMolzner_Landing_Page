@@ -144,9 +144,11 @@ main,
 .bamboo-leaf {
   animation: bamboo-leaf-fall var(--leaf-duration) linear infinite;
   animation-delay: var(--leaf-delay);
-  background: linear-gradient(135deg, rgba(156, 175, 136, 0.62), rgba(85, 122, 56, 0.42));
+  background:
+    linear-gradient(90deg, rgba(13, 45, 32, 0.34), transparent 16%, transparent 84%, rgba(13, 45, 32, 0.28)),
+    linear-gradient(135deg, rgba(64, 91, 47, 0.84), rgba(28, 75, 51, 0.7) 58%, rgba(91, 103, 52, 0.66));
   border-radius: 100% 0 100% 0;
-  box-shadow: 0 10px 20px rgba(21, 63, 44, 0.06);
+  box-shadow: 0 10px 20px rgba(13, 45, 32, 0.12);
   height: calc(var(--leaf-size) * 2.95);
   left: var(--leaf-left);
   opacity: 0;
@@ -159,7 +161,7 @@ main,
 }
 
 .bamboo-leaf::after {
-  background: rgba(255, 248, 232, 0.24);
+  background: rgba(13, 45, 32, 0.24);
   border-radius: 999px;
   content: "";
   inset: 10% 47% 12% 47%;
